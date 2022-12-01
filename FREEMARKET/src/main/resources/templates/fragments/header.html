@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head th:fragment="fragment-header">
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -35,22 +35,22 @@
 </head>
 <body>
 <!-- ======= Header ======= -->
-<header id="header" class="fixed-top d-flex align-items-center">
+<header id="header" class="fixed-top d-flex align-items-center" th:fragment="fragment-menu">
   <div class="container d-flex align-items-center">
 
-    <h1 class="logo me-auto"><a href="/templates/index.html">header.html@@@@@@@@@@@@@@@@@@@</a></h1>
+    <h1 class="logo me-auto"><a href="/freeMarket/home">SY MARKET</a></h1>
     <!-- Uncomment below if you prefer to use an image logo -->
     <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
     <nav id="navbar" class="navbar">
       <ul>
-        <li><a href="/templates/index.html" class="active">Home</a></li>
+        <li><a href="/freeMarket/home" class="active">Home</a></li>
 
         <li class="dropdown"><a href="#"><span>About</span> <i class="bi bi-chevron-down"></i></a>
           <ul>
-            <li><a href="../about.html">About</a></li>
-            <li><a href="../team.html">Team</a></li>
-            <li><a href="../testimonials.html">Testimonials</a></li>
+            <li><a href="/templates/about.html">About</a></li>
+            <li><a href="/templates/team.html">Team</a></li>
+            <li><a href="/templates/testimonials.html">Testimonials</a></li>
 
             <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
               <ul>
@@ -63,13 +63,13 @@
             </li>
           </ul>
         </li>
-        <li><a href="/main/serviceView">Seeervices</a></li>
-        <li><a href="/main/portfolio">Portfolio</a></li>
-        <li><a href="/main/pricing">Pricing</a></li>
-        <li><a href="/main/blog">Blog</a></li>
+        <li><a href="/templates/serviceView">Services</a></li>
+        <li><a href="/templates/portfolio">Portfolio</a></li>
+        <li><a href="/templates/pricing">Pricing</a></li>
+        <li><a href="/templates/blog">Blog</a></li>
 
-        <li><a href="../contact.html">Contact</a></li>
-        <li><a href="../index.html" class="getstarted">Get Started</a></li>
+        <li><a href="/templates/contact.html">Contact</a></li>
+        <li><a href="/freeMarket/login" class="getstarted">로그인/회원가입</a></li>
       </ul>
       <i class="bi bi-list mobile-nav-toggle"></i>
     </nav><!-- .navbar -->
