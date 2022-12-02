@@ -61,7 +61,7 @@
                 </div>
               </div>-->
               <div class="form-group mt-3">
-                <input th:text="${a.loginId}" class="form-control" name="userId" id="userId" placeholder="Your Id" required>
+                <input type="text" class="form-control" name="userId" id="userId" placeholder="Your Id" required>
               </div>
               <div class="form-group mt-3">
                 <input type="text" class="form-control" name="loginPw" id="loginPw" placeholder="Your Password" required>
@@ -71,7 +71,7 @@
                 <div class="error-message"></div>
                 <div class="sent-message">Your message has been sent. Thank you!</div>
               </div>
-              <div class="row">
+ <!--             <div class="row">-->
                   <div class="col-md-6 form-group">
               <div class="text-center"><button type="submit" onclick="javascript:form.action='/freeMarket/loginCheck';" >확인</button></div>
                   </div>
@@ -81,7 +81,7 @@
                   <div class="col-md-6 form-group">
               <div class="text-center"><button type="submit">아이디/비밀번호 찾기</button></div>
                   </div>
-              </div>
+ <!--             </div>-->
             </form>
 
           </div>

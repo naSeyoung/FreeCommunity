@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -24,17 +25,18 @@ public class LoginController {
     public String loginController(HttpSession session){
         logger.info("## loginController 진입 ##");
          //  session.getAttribute("id",id);
-        String auth =
+
         return "login";
     }
-    @GetMapping("/freeMarket/loginCheck")
+    @PostMapping("/freeMarket/loginCheck")
     public String loginCheckController(HttpServletRequest request,Model model ){
         HttpSession session = request.getSession();
         LoginDto loginDto = new LoginDto();
         logger.info("## /freeMarket/loginCheck 진입 ##");
-            logger.info("아이디 맞음 ");
+
         session.setAttribute("a",loginDto.getUserId());
-        model.getAttribute("loginId","");
-        return "redirect:/";
+        logger.info("loginDto.getUserId(){}",loginDto.getUserId());
+        logger.info("아이디 맞음 ");
+        return "redirect:/freeMarket/home";
     }
 }
