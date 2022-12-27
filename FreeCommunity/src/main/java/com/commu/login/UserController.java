@@ -1,4 +1,4 @@
-package com.free.trade.controller;
+package com.commu.login;
 
 import javax.servlet.http.HttpSession;
 

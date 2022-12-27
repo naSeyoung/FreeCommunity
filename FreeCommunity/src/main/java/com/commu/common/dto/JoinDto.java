@@ -1,4 +1,4 @@
-package com.free.trade.dto;
+package com.commu.common.dto;
 
 import lombok.Getter;
 import lombok.Setter;

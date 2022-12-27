@@ -1,4 +1,4 @@
-package com.free.trade.controller;
+package com.commu.main;
 
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class MainController {
     Logger logger = LoggerFactory.getLogger(MainController.class);
-    @GetMapping("/freeMarket/home")
+    @GetMapping(value={"/" ,"/ditto"})
     public String mainController(){
         logger.info("index.html 진입 #####");
 
