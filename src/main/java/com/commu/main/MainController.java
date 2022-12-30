@@ -14,7 +14,9 @@ public class MainController {
     public String mainController(){
         logger.info("index.html 진입 #####");
 
-      return "index";
+
+
+        return "index";
     }
 
 }
