@@ -19,6 +19,7 @@ public class LoginController {
 
     Logger logger = LoggerFactory.getLogger(MainController.class);
    // LoginDto loginDto = new LoginDto();
+
     @GetMapping("/freeMarket/login")
     public String loginController(HttpSession session){
         logger.info("## loginController 진입 ##");
