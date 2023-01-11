@@ -7,11 +7,15 @@ import lombok.Setter;
 @Setter
 public class CommunityDto {
 
+    int contentNo;
     String title;
-    String content;
-    String regUser;
-    String regDt;
-    String likeCnt; //추천수
+    String contents;
+    String regUserId;
+    String regDate;
+    int likeCnt;
+    String updDate;
+
+
 
 
 }
