@@ -15,7 +15,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import javax.sql.DataSource;
 
 @Configuration
-@MapperScan(value= {"com.commu.*"})
+@MapperScan(basePackages = "com.commu.*")
 @EnableTransactionManagement
 public class MybatisConfig {
     @Bean
@@ -34,7 +34,7 @@ public class MybatisConfig {
         SqlSessionFactoryBean sessionFactory = new SqlSessionFactoryBean();
         sessionFactory.setDataSource(dataSource);
 
-        Resource[] res = new PathMatchingResourcePatternResolver().getResources("classpath:/sqlMap/**/*.xml");
+        Resource[] res = new PathMatchingResourcePatternResolver().getResources("classpath:/mapper/**/*.xml");
 
         sessionFactory.setMapperLocations(res);
 

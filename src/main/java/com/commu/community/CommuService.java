@@ -15,7 +15,8 @@ public class CommuService {
 
     private CommunityDto communityDto;
 
-    public List getCommunityList() throws Exception {
+    private CommuMapper commuMapper;
+    public List<CommunityDto>getCommunityList() throws Exception {
        logger.info("이거탐");
         return commuDao.getCommunityList(communityDto);
 

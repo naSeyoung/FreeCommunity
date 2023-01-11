@@ -9,14 +9,13 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-@Mapper
 public class CommuDao {
-    @Autowired
+
     private SqlSessionTemplate sqlSession;
     private CommunityDto communityDto;
 
     public List<CommunityDto> getCommunityList(CommunityDto communityDto){
-        return sqlSession.selectList("CommuDao.getCommunityList", communityDto);
+        return sqlSession.selectList("CommuMapper.getCommunityList", communityDto);
     }
 
 }
