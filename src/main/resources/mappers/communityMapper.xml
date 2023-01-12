@@ -8,10 +8,10 @@
              , TITLE AS title
              , CONTENTS AS contents
              , REG_USER_ID AS regUserId
-             , REG_DATE AS regDate
+             , DATE_FORMAT(REG_DATE ,'%Y.%m.%d') AS regDate
              , LIKE_CNT AS likeCnt
              , UPD_DATE AS updDate
         FROM COMMUNITYBOARD
-        WHERE CONTENT_NO = 1
+        ORDER BY CONTENT_NO DESC
     </select>
 </mapper>
