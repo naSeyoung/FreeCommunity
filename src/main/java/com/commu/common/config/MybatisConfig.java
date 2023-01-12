@@ -1,5 +1,6 @@
 package com.commu.common.config;
 
+import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
@@ -15,7 +16,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import javax.sql.DataSource;
 
 @Configuration
-@MapperScan(basePackages = "com.commu.*")
+@MapperScan(basePackages = "com.commu.*.*")
 @EnableTransactionManagement
 public class MybatisConfig {
     @Bean
@@ -34,7 +35,7 @@ public class MybatisConfig {
         SqlSessionFactoryBean sessionFactory = new SqlSessionFactoryBean();
         sessionFactory.setDataSource(dataSource);
 
-        Resource[] res = new PathMatchingResourcePatternResolver().getResources("classpath:/mapper/**/*.xml");
+        Resource[] res = new PathMatchingResourcePatternResolver().getResources("classpath:mappers/*.xml");
 
         sessionFactory.setMapperLocations(res);
 
@@ -45,4 +46,5 @@ public class MybatisConfig {
     public SqlSessionTemplate sqlSessionTemplate(SqlSessionFactory sqlSessionFactory) throws Exception {
         return new SqlSessionTemplate(sqlSessionFactory);
     }
+
 }

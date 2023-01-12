@@ -12,7 +12,7 @@ import java.util.List;
 
 public interface CommuService {
 
-    List<CommunityDto> getCommunityList(CommunityDto communityDto) throws Exception;
+    List<CommunityDto> getCommunityList(CommunityDto communityDto);
 
 
 }

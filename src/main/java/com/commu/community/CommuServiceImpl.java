@@ -17,9 +17,10 @@ public class CommuServiceImpl implements CommuService {
 
 
     @Override
-    public List<CommunityDto> getCommunityList(CommunityDto communityDto) throws Exception {
+    public List<CommunityDto> getCommunityList(CommunityDto communityDto){
         logger.info("이거탐");
         List<CommunityDto> list = commuDao.getCommunityList(communityDto);
+
         return list;
     }
 

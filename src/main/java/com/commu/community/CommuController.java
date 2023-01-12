@@ -8,6 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import javax.servlet.http.HttpServletRequest;
@@ -23,18 +24,22 @@ public class CommuController {
     @Autowired
     private CommuService commuService;
 
-    private CommunityDto communityDto;
+
+
     Logger logger = LoggerFactory.getLogger(MainController.class);
     @GetMapping("/dittoList")
-    public String getCommunityList(HttpServletRequest request, HttpServletResponse response) throws Exception {
+    public String getCommunityList(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
+        CommunityDto communityDto = new CommunityDto();
+        logger.info("dittoList 시작 ");
         List<CommunityDto> list = commuService.getCommunityList(communityDto);
 
 
-
-
-        logger.info("setContents",communityDto.getContents());
-
-
+        if(list == null || list.size() == 0){
+            logger.info("진짜 못받아오는거임 ");
+        }if(list != null || list.size() != 0){
+            logger.info("있는데 안보임");
+        }
+        model.addAttribute("list",list);
 
 
 
