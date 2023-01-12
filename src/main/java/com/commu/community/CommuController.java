@@ -20,13 +20,14 @@ import java.util.List;
 @Slf4j
 @Controller
 public class CommuController {
+    @Autowired
     private CommuService commuService;
 
     private CommunityDto communityDto;
     Logger logger = LoggerFactory.getLogger(MainController.class);
     @GetMapping("/dittoList")
     public String getCommunityList(HttpServletRequest request, HttpServletResponse response) throws Exception {
-        List<CommunityDto> list = commuService.getCommunityList();
+        List<CommunityDto> list = commuService.getCommunityList(communityDto);
 
 
 
